@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PBCOEHacks 2027 | Central India's Premier Hardware & AI Hackathon</title>
+  <meta name="description" content="PBCOEHacks 2027 is a 24-hour national hackathon hosted at Priyadarshini Bhagwati College of Engineering (PBCOE), Nagpur. 100% Free for external students. Official MLH Member Event partner.">
+  <meta name="keywords" content="PBCOEHacks, PBCOE, MLH, Major League Hacking, Hackathon Nagpur, Devfolio, Hardware Hackathon, IoT, AI, Engineering Hackathon">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="PBCOEHacks 2027 | Priyadarshini Bhagwati College of Engineering">
+  <meta property="og:description" content="24-Hour National Sprint. 200+ Hackers. ₹1,00,000+ Prize Pool. 100% Free with Hardware Lab & MLH Swag.">
+  <meta property="og:image" content="https://pbcoe.edu.in/img_pbcoe/logo.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230B0F19'/><path d='M50 15 L78 30 L78 70 L50 85 L22 70 L22 30 Z' fill='none' stroke='%2306b6d4' stroke-width='6'/><path d='M50 32 L65 42 L65 60 L50 70 L35 60 L35 42 Z' fill='%238b5cf6'/><path d='M44 46 L56 46 M50 40 L50 62' stroke='%23ffffff' stroke-width='4' stroke-linecap='round'/></svg>">
+
+  <!-- Google Fonts: Outfit & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#0B0F19',
+              darker: '#06080F',
+              card: 'rgba(15, 23, 42, 0.70)',
+              cardHover: 'rgba(23, 37, 66, 0.85)',
+              border: 'rgba(255, 255, 255, 0.08)',
+              borderGlow: 'rgba(6, 182, 212, 0.4)',
+              cyan: '#06b6d4',
+              violet: '#8b5cf6',
+              blue: '#3b82f6',
+              accent: '#38bdf8',
+            }
+          },
+          fontFamily: {
+            sans: ['Outfit', 'Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          animation: {
+            'glow-pulse': 'glowPulse 4s ease-in-out infinite',
+            'float-slow': 'floatSlow 6s ease-in-out infinite',
+          },
+          keyframes: {
+            glowPulse: {
+              '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
+              '50%': { opacity: '0.8', transform: 'scale(1.05)' },
+            },
+            floatSlow: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0B0F19;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #06b6d4;
+    }
+
+    /* Radial gradient hero glow */
+    .hero-glow-1 {
+      background: radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.18) 0%, rgba(11, 15, 25, 0) 70%);
+    }
+    .hero-glow-2 {
+      background: radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.18) 0%, rgba(11, 15, 25, 0) 70%);
+    }
+    .grid-pattern {
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+    }
+
+    /* Glassmorphism Classes */
+    .glass-card {
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-card:hover {
+      background: rgba(20, 32, 58, 0.75);
+      border-color: rgba(6, 182, 212, 0.35);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px -10px rgba(6, 182, 212, 0.15);
+    }
+
+    .glass-nav {
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* Gradient Text */
+    .text-gradient-cyan {
+      background: linear-gradient(135deg, #38bdf8 0%, #06b6d4 50%, #818cf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .text-gradient-violet {
+      background: linear-gradient(135deg, #a78bfa 0%, #c084fc 50%, #f472b6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .text-gradient-gold {
+      background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Pulse Dot */
+    .live-pulse {
+      box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+      animation: pulseGreen 2s infinite;
+    }
+    @keyframes pulseGreen {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+    }
+  </style>
+</head>
+<body class="bg-[#0B0F19] text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-black overflow-x-hidden min-h-screen">
+
+  <!-- ========================================================================= -->
+  <!-- 1. MANDATORY MLH TRUST BADGE (Fixed Top-Right)                            -->
+  <!-- ========================================================================= -->
+  <a id="mlh-trust-badge" 
+     style="display:block;max-width:100px;min-width:60px;position:fixed;right:25px;top:0;width:10%;z-index:10000" 
+     href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2027-season&utm_content=white" 
+     target="_blank" 
+     rel="noopener noreferrer"
+     aria-label="Major League Hacking 2027 Hackathon Season Trust Badge">
+    <img src="https://s3.amazonaws.com/logged-assets/trust-badge/2027/mlh-trust-badge-2027-white.svg" 
+         alt="Major League Hacking 2027 Hackathon Season" 
+         style="width:100%; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));">
+  </a>
+
+  <!-- ========================================================================= -->
+  <!-- 2. STICKY NAVBAR                                                          -->
+  <!-- ========================================================================= -->
+  <header class="fixed top-0 left-0 w-full z-50 glass-nav transition-all duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Left: PBCOE Institutional Crest & Hackathon Brand -->
+      <a href="#" class="flex items-center gap-3 group">
+        <!-- Logo Image with Multi-Tier Fallback -->
+        <div class="relative h-11 w-11 rounded-xl bg-slate-900 border border-white/10 p-1 flex items-center justify-center overflow-hidden shadow-lg group-hover:border-cyan-500/50 transition-colors">
+          <img src="https://pbcoe.edu.in/images/logo.png" 
+               id="pbcoe-logo-img"
+               alt="PBCOE College Crest" 
+               class="h-full w-full object-contain"
+               onerror="
+                 if (this.src === 'https://pbcoe.edu.in/images/logo.png') {
+                   this.src = 'https://pbcoe.edu.in/assets/images/logo.png';
+                 } else if (this.src === 'https://pbcoe.edu.in/assets/images/logo.png') {
+                   this.src = 'https://pbcoe.edu.in/img_pbcoe/logo.jpg';
+                 } else {
+                   this.style.display = 'none';
+                   document.getElementById('pbcoe-fallback-crest').style.display = 'flex';
+                 }
+               ">
+          <!-- Standalone SVG Fallback Crest -->
+          <div id="pbcoe-fallback-crest" style="display:none;" class="w-full h-full items-center justify-center text-cyan-400">
+            <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L3 7v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V7l-9-5z"/>
+              <path d="M12 7v10M8 12h8" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="flex flex-col">
+          <div class="flex items-center gap-2">
+            <span class="text-xl font-extrabold tracking-tight text-white group-hover:text-cyan-400 transition-colors">PBCOEHacks</span>
+            <span class="text-xs px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 font-mono font-semibold">2027</span>
+          </div>
+          <span class="text-[10px] uppercase tracking-wider text-slate-400 font-medium">PBCOE Nagpur • MLH Partner</span>
+        </div>
+      </a>
+
+      <!-- Center: Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300">
+        <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
+        <a href="#tracks" class="hover:text-cyan-400 transition-colors">Tracks</a>
+        <a href="#perks" class="hover:text-cyan-400 transition-colors">Hardware & Perks</a>
+        <a href="#schedule" class="hover:text-cyan-400 transition-colors">Schedule</a>
+        <a href="#prizes" class="hover:text-cyan-400 transition-colors">Prizes</a>
+        <a href="#venue" class="hover:text-cyan-400 transition-colors">Venue</a>
+        <a href="#faq" class="hover:text-cyan-400 transition-colors">FAQ</a>
+      </nav>
+
+      <!-- Right: Apply with Devfolio Button (with margin to prevent MLH badge collision) -->
+      <div class="flex items-center gap-3 pr-24 sm:pr-28 md:pr-32 lg:pr-36">
+        <a href="https://devfolio.co" target="_blank" rel="noopener noreferrer" 
+           class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 px-4 sm:px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm tracking-wide shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 transition-all duration-300 transform hover:-translate-y-0.5">
+          <!-- Devfolio stylized mark -->
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm1 14.5v-9l6 4.5-6 4.5zM11 7.5v9l-6-4.5 6-4.5z"/>
+          </svg>
+          <span>Apply with Devfolio</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-toggle" aria-label="Toggle Navigation Menu" class="lg:hidden p-2 rounded-lg bg-slate-800/80 text-slate-300 hover:text-white border border-white/10">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-white/10 bg-[#0B0F19]/95 backdrop-blur-2xl px-6 py-6 space-y-4">
+      <div class="grid grid-cols-2 gap-3 text-sm font-medium">
+        <a href="#about" class="mobile-nav-link p-2 rounded-lg hover:bg-slate-800 text-slate-300">About</a>
+        <a href="#tracks" class="mobile-nav-link p-2 rounded-lg hover:bg-slate-800 text-slate-300">Tracks</a>
+        <a href="#perks" class="mobile-nav-link p-2 rounded-lg hover:bg-slate-800 text-slate-300">Hardware & Perks</a>
+        <a href="#schedule" class="mobile-nav-link p-2 rounded-lg hover:bg-slate-800 text-slate-300">Schedule</a>
+        <a href="#prizes" class="mobile-nav-link p-2 rounded-lg hover:bg-slate-800 text-slate-300">Prizes</a>
+        <a href="#venue" class="mobile-nav-link p-2 rounded-lg hover:bg-slate-800 text-slate-300">Venue</a>
+        <a href="#faq" class="mobile-nav-link p-2 rounded-lg hover:bg-slate-800 text-slate-300">FAQ</a>
+        <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank" class="p-2 rounded-lg hover:bg-slate-800 text-cyan-400">Code of Conduct</a>
+      </div>
+      <div class="pt-2 flex flex-col gap-2">
+        <a href="https://devfolio.co" target="_blank" class="w-full py-3 rounded-xl bg-cyan-500 text-slate-950 font-bold text-center text-sm">
+          Apply with Devfolio
+        </a>
+        <a href="https://discord.gg/mlh" target="_blank" class="w-full py-2.5 rounded-xl bg-slate-800 text-slate-200 font-semibold text-center text-sm border border-white/10">
+          Join Discord
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ========================================================================= -->
+    <!-- 3. HERO SECTION                                                           -->
+    <!-- ========================================================================= -->
+    <section class="relative min-h-[92vh] flex items-center justify-center pt-28 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <!-- Glow Background Elements -->
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] hero-glow-1 pointer-events-none rounded-full blur-3xl opacity-60"></div>
+      <div class="absolute top-1/3 left-1/3 w-[500px] h-[500px] hero-glow-2 pointer-events-none rounded-full blur-3xl opacity-50"></div>
+      <div class="absolute inset-0 grid-pattern pointer-events-none"></div>
+
+      <!-- Canvas for Starfield / Circuit Sparks -->
+      <canvas id="hero-canvas" class="absolute inset-0 pointer-events-none z-0 opacity-40"></canvas>
+
+      <div class="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
+        
+        <!-- Badge Pill -->
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-cyan-500/30 text-xs sm:text-sm font-medium mb-8 shadow-xl">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 live-pulse"></span>
+          <span class="text-cyan-300 font-semibold">⚡ Central India's Premier Student Innovation Sprint</span>
+          <span class="text-slate-500">|</span>
+          <span class="text-slate-300 font-mono">March 20–21, 2027</span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight leading-[1.1] text-white max-w-4xl mb-6">
+          Build The Future of <br class="hidden sm:inline" />
+          <span class="text-gradient-cyan">Hardware, IoT</span> &amp; <span class="text-gradient-violet">Intelligent Systems</span>
+        </h1>
+
+        <!-- Subheadline -->
+        <p class="text-base sm:text-lg md:text-xl text-slate-300 max-w-3xl leading-relaxed font-normal mb-8">
+          A high-voltage <strong class="text-white font-semibold">24-hour physical sprint</strong> hosted at 
+          <span class="text-cyan-300 font-semibold">Priyadarshini Bhagwati College of Engineering (PBCOE), Nagpur</span>. 
+          Open to all undergraduate, diploma, and engineering students across India. 
+          <span class="text-emerald-400 font-semibold">100% Free</span> — meals, hardware loaners, official MLH swag, and travel perks provided.
+        </p>
+
+        <!-- Live Countdown Timer Strip -->
+        <div class="mb-10 w-full max-w-2xl">
+          <div class="text-xs uppercase font-mono tracking-widest text-slate-400 mb-3 flex items-center justify-center gap-2">
+            <i data-lucide="timer" class="w-4 h-4 text-cyan-400"></i>
+            <span>Sprint Countdown &bull; March 20, 2027</span>
+          </div>
+          <div class="grid grid-cols-4 gap-2 sm:gap-4 text-center">
+            <div class="glass-card py-3 px-2 sm:py-4 sm:px-4 rounded-2xl border border-white/10">
+              <span id="days" class="text-2xl sm:text-4xl font-extrabold font-mono text-cyan-400">--</span>
+              <span class="block text-[10px] sm:text-xs text-slate-400 uppercase mt-1">Days</span>
+            </div>
+            <div class="glass-card py-3 px-2 sm:py-4 sm:px-4 rounded-2xl border border-white/10">
+              <span id="hours" class="text-2xl sm:text-4xl font-extrabold font-mono text-violet-400">--</span>
+              <span class="block text-[10px] sm:text-xs text-slate-400 uppercase mt-1">Hours</span>
+            </div>
+            <div class="glass-card py-3 px-2 sm:py-4 sm:px-4 rounded-2xl border border-white/10">
+              <span id="minutes" class="text-2xl sm:text-4xl font-extrabold font-mono text-blue-400">--</span>
+              <span class="block text-[10px] sm:text-xs text-slate-400 uppercase mt-1">Minutes</span>
+            </div>
+            <div class="glass-card py-3 px-2 sm:py-4 sm:px-4 rounded-2xl border border-white/10">
+              <span id="seconds" class="text-2xl sm:text-4xl font-extrabold font-mono text-emerald-400">--</span>
+              <span class="block text-[10px] sm:text-xs text-slate-400 uppercase mt-1">Seconds</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dual CTA Buttons -->
+        <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto justify-center mb-12">
+          <a href="https://devfolio.co" target="_blank" rel="noopener noreferrer"
+             class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 text-slate-950 font-extrabold px-8 py-4 rounded-2xl text-base shadow-xl shadow-cyan-500/25 hover:shadow-cyan-500/40 transform hover:-translate-y-0.5 transition-all">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm1 14.5v-9l6 4.5-6 4.5zM11 7.5v9l-6-4.5 6-4.5z"/>
+            </svg>
+            <span>Apply with Devfolio</span>
+          </a>
+
+          <a href="https://discord.gg/mlh" target="_blank" rel="noopener noreferrer"
+             class="w-full sm:w-auto inline-flex items-center justify-center gap-3 glass-card hover:bg-slate-800/80 text-white font-semibold px-8 py-4 rounded-2xl text-base border border-white/15 hover:border-violet-500/50 transition-all">
+            <svg class="w-5 h-5 fill-[#5865F2]" viewBox="0 0 24 24">
+              <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.893.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+            </svg>
+            <span>Join Discord Community</span>
+          </a>
+        </div>
+
+        <!-- Key Stats Strip -->
+        <div class="w-full max-w-4xl glass-card rounded-2xl p-6 border border-white/10 shadow-2xl">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 divide-y md:divide-y-0 md:divide-x divide-white/10">
+            <div class="flex flex-col items-center">
+              <span class="text-3xl sm:text-4xl font-black text-cyan-400 font-mono">24 Hours</span>
+              <span class="text-xs uppercase tracking-wider text-slate-400 mt-1">Non-Stop Physical Sprint</span>
+            </div>
+            <div class="flex flex-col items-center pt-4 md:pt-0">
+              <span class="text-3xl sm:text-4xl font-black text-violet-400 font-mono">200+ Hackers</span>
+              <span class="text-xs uppercase tracking-wider text-slate-400 mt-1">From Top Universities</span>
+            </div>
+            <div class="flex flex-col items-center pt-4 md:pt-0">
+              <span class="text-3xl sm:text-4xl font-black text-emerald-400 font-mono">₹1,00,000+</span>
+              <span class="text-xs uppercase tracking-wider text-slate-400 mt-1">Cash Prizes &amp; Grants</span>
+            </div>
+            <div class="flex flex-col items-center pt-4 md:pt-0">
+              <span class="text-3xl sm:text-4xl font-black text-amber-400 font-mono">100% Free</span>
+              <span class="text-xs uppercase tracking-wider text-slate-400 mt-1">Food, Hardware &amp; Stay</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 4. ABOUT SECTION & INSTITUTIONAL EXCELLENCE                              -->
+    <!-- ========================================================================= -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 relative border-t border-white/5">
+      <div class="max-w-7xl mx-auto">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs uppercase font-mono tracking-widest text-cyan-400 font-semibold">About The Hackathon</span>
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-2">Where Silicon Meets Intelligent Software</h2>
+          <p class="text-slate-400 mt-4 text-base sm:text-lg leading-relaxed">
+            Hosted by Priyadarshini Bhagwati College of Engineering (PBCOE), Nagpur under Lokmanya Tilak Jankalyan Shikshan Sanstha (LTJSS). 
+            PBCOEHacks 2027 unites creators, hackers, and embedded engineers to construct production-ready solutions in 24 intensive hours.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          
+          <!-- Pillar 1 -->
+          <div class="glass-card rounded-2xl p-8 border border-white/10 flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-6">
+                <i data-lucide="cpu" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3">Live Hardware Prototyping</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Break out of pure screen-based coding. Leverage microcontrollers, edge sensors, IoT dev boards, and circuit test benches directly provided through our dedicated MLH Hardware Lab.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-white/10 flex items-center text-cyan-400 text-xs font-semibold uppercase tracking-wider gap-1">
+              <span>Hardware Loaners Provided</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </div>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="glass-card rounded-2xl p-8 border border-white/10 flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-violet-500/10 border border-violet-500/30 flex items-center justify-center text-violet-400 mb-6">
+                <i data-lucide="award" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3">Official MLH Member Event</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                As an official Major League Hacking partner, PBCOEHacks adheres to international hackathon standards, providing exclusive season swag boxes, verified credentials, and high-impact industry judging.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-white/10 flex items-center text-violet-400 text-xs font-semibold uppercase tracking-wider gap-1">
+              <span>Global MLH Standards</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </div>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="glass-card rounded-2xl p-8 border border-white/10 flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-6">
+                <i data-lucide="sparkles" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3">100% Free For All Students</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Financial barriers should never stop builders. Selected student teams from any recognized institution across India receive free admission, 5 hearty meals, snacks, high-speed connectivity, and sleep zones.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-white/10 flex items-center text-emerald-400 text-xs font-semibold uppercase tracking-wider gap-1">
+              <span>Zero Registration Fee</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Institutional Details Card -->
+        <div class="mt-12 glass-card rounded-2xl p-6 sm:p-8 border border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="flex items-center gap-5">
+            <div class="w-16 h-16 rounded-2xl bg-slate-900 border border-white/15 p-2 flex items-center justify-center shrink-0">
+              <img src="https://pbcoe.edu.in/img_pbcoe/logo.jpg" alt="PBCOE Crest" class="w-full h-full object-contain"
+                   onerror="this.src='https://pbcoe.edu.in/images/logo.png'">
+            </div>
+            <div>
+              <h4 class="text-lg font-bold text-white">Priyadarshini Bhagwati College of Engineering, Nagpur</h4>
+              <p class="text-sm text-slate-400 mt-0.5">Approved by AICTE, Affiliated to RTMNU Nagpur | Harpur Nagar, Umred Road, Nagpur - 440024</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-slate-300">Est. 2007</span>
+            <span class="px-3 py-1.5 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-xs font-mono text-cyan-300">NAAC Accredited</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 5. TRACKS & FOCUS AREAS                                                   -->
+    <!-- ========================================================================= -->
+    <section id="tracks" class="py-20 px-4 sm:px-6 lg:px-8 relative bg-slate-950/40">
+      <div class="max-w-7xl mx-auto">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs uppercase font-mono tracking-widest text-violet-400 font-semibold">Innovation Tracks</span>
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-2">Solve Real Problems Across 4 Frontiers</h2>
+          <p class="text-slate-400 mt-4 text-base sm:text-lg">
+            Choose your battleground. From edge microcontrollers to autonomous multi-agent networks, build applications that create measurable impact.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <!-- Track 1: Embedded Systems & IoT -->
+          <div class="glass-card rounded-3xl p-8 border border-white/10 relative overflow-hidden group">
+            <div class="absolute -right-12 -top-12 w-44 h-44 rounded-full bg-cyan-500/10 blur-2xl group-hover:bg-cyan-500/20 transition-all"></div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+                <i data-lucide="circuit-board" class="w-7 h-7"></i>
+              </div>
+              <span class="text-xs font-mono px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Track 01</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3">Embedded Systems &amp; IoT</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              Design real-world connected hardware systems. From ESP32 and STM32 sensor mesh networks to industrial predictive maintenance, smart energy grids, and edge AI microcontrollers.
+            </p>
+            <div class="space-y-2 mb-6">
+              <div class="text-xs font-semibold text-slate-300 uppercase tracking-wider">Recommended Tech Stack:</div>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-xs text-cyan-300 border border-white/5 font-mono">ESP32 / ESP-IDF</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-xs text-cyan-300 border border-white/5 font-mono">Raspberry Pi</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-xs text-cyan-300 border border-white/5 font-mono">FreeRTOS</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-xs text-cyan-300 border border-white/5 font-mono">MQTT / LoRaWAN</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-xs text-cyan-300 border border-white/5 font-mono">TinyML</span>
+              </div>
+            </div>
+            <div class="text-xs text-slate-400 border-t border-white/10 pt-4 flex items-center gap-2">
+              <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400"></i>
+              <span>Hardware kits eligible for special MLH Best Hardware Hack Bounty</span>
+            </div>
+          </div>
+
+          <!-- Track 2: Generative AI & Autonomous Agents -->
+          <div class="glass-card rounded-3xl p-8 border border-white/10 relative overflow-hidden group">
+            <div class="absolute -right-12 -top-12 w-44 h-44 rounded-full bg-violet-500/10 blur-2xl group-hover:bg-violet-500/20 transition-all"></div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="w-14 h-14 rounded-2xl bg-violet-500/10 border border-violet-500/30 flex items-center justify-center text-violet-400">
+                <i data-lucide="bot" class="w-7 h-7"></i>
+              </div>
+              <span class="text-xs font-mono px-3 py-1 rounded-full bg-violet-500/10 text-violet-300 border border-violet-500/20">Track 02</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3">Generative AI &amp; Autonomous Agents</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              Harness the frontier of generative intelligence, multi-agent frameworks, autonomous workflow orchestration, and localized small language models (SLMs) running directly on edge hardware.
+            </p>
+            <div class="space-y-2 mb-6">
+              <div class="text-xs font-semibold text-slate-300 uppercase tracking-wider">Recommended Tech Stack:</div>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-xs text-violet-300 border border-white/5 font-mono">LangChain / LlamaIndex</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-xs text-violet-300 border border-white/5 font-mono">Ollama / Local LLMs</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-xs text-violet-300 border border-white/5 font-mono">CrewAI / AutoGen</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-xs text-violet-300 border border-white/5 font-mono">Vector Databases</span>
+              </div>
+            </div>
+            <div class="text-xs text-slate-400 border-t border-white/10 pt-4 flex items-center gap-2">
+              <i data-lucide="check-circle" class="w-4 h-4 text-violet-400"></i>
+              <span>Free Cloud GPU / API tokens provided for all registered teams</span>
+            </div>
+          </div>
+
+          <!-- Track 3: Healthcare & Smart Cities -->
+          <div class="glass-card rounded-3xl p-8 border border-white/10 relative overflow-hidden group">
+            <div class="absolute -right-12 -top-12 w-44 h-44 rounded-full bg-emerald-500/10 blur-2xl group-hover:bg-emerald-500/20 transition-all"></div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                <i data-lucide="heart-pulse" class="w-7 h-7"></i>
+              </div>
+              <span class="text-xs font-mono px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">Track 03</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3">Healthcare &amp; Smart Cities</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              Build solutions for critical infrastructure: remote tele-health monitoring, vital signs diagnostics, intelligent traffic telematics, waste management, municipal crisis dispatch, and clean air sensing.
+            </p>
+            <div class="space-y-2 mb-6">
+              <div class="text-xs font-semibold text-slate-300 uppercase tracking-wider">Recommended Tech Stack:</div>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-xs text-emerald-300 border border-white/5 font-mono">Bio-sensors (ECG/PPG)</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-xs text-emerald-300 border border-white/5 font-mono">OpenStreetMap / GIS</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-xs text-emerald-300 border border-white/5 font-mono">WebSockets</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-xs text-emerald-300 border border-white/5 font-mono">FHIR / Health APIs</span>
+              </div>
+            </div>
+            <div class="text-xs text-slate-400 border-t border-white/10 pt-4 flex items-center gap-2">
+              <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+              <span>Civic challenge track in collaboration with municipal advisors</span>
+            </div>
+          </div>
+
+          <!-- Track 4: Open Innovation & Social Good -->
+          <div class="glass-card rounded-3xl p-8 border border-white/10 relative overflow-hidden group">
+            <div class="absolute -right-12 -top-12 w-44 h-44 rounded-full bg-amber-500/10 blur-2xl group-hover:bg-amber-500/20 transition-all"></div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
+                <i data-lucide="globe" class="w-7 h-7"></i>
+              </div>
+              <span class="text-xs font-mono px-3 py-1 rounded-full bg-amber-500/10 text-amber-300 border border-amber-500/20">Track 04</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3">Open Innovation &amp; Social Good</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              Have an audacious concept that breaks the mold? Build for agritech, assistive technologies for individuals with disabilities, disaster relief, green energy, or decentralized open source public goods.
+            </p>
+            <div class="space-y-2 mb-6">
+              <div class="text-xs font-semibold text-slate-300 uppercase tracking-wider">Recommended Tech Stack:</div>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-xs text-amber-300 border border-white/5 font-mono">Open Source Stacks</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-xs text-amber-300 border border-white/5 font-mono">Computer Vision</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-xs text-amber-300 border border-white/5 font-mono">Audio AI</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-xs text-amber-300 border border-white/5 font-mono">PWA / Offline-First</span>
+              </div>
+            </div>
+            <div class="text-xs text-slate-400 border-t border-white/10 pt-4 flex items-center gap-2">
+              <i data-lucide="check-circle" class="w-4 h-4 text-amber-400"></i>
+              <span>Judged on creativity, accessibility, and real-world societal impact</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 6. MLH HARDWARE LAB & PERKS SECTION                                       -->
+    <!-- ========================================================================= -->
+    <section id="perks" class="py-20 px-4 sm:px-6 lg:px-8 relative border-t border-white/5">
+      <div class="max-w-7xl mx-auto">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs uppercase font-mono tracking-widest text-cyan-400 font-semibold">Equipment &amp; Benefits</span>
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-2">MLH Hardware Lab &amp; Exclusive Hacker Perks</h2>
+          <p class="text-slate-400 mt-4 text-base sm:text-lg">
+            Every participant gets access to our fully equipped hardware inventory, cloud infrastructure credits, and official Major League Hacking season swag.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Perk 1: Hardware Loaners -->
+          <div class="glass-card rounded-2xl p-6 border border-white/10 flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-4">
+                <i data-lucide="microchip" class="w-6 h-6"></i>
+              </div>
+              <h4 class="text-lg font-bold text-white mb-2">Hardware Lab Loaners</h4>
+              <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                Check out ESP32-S3 boards, Arduino kits, Raspberry Pi units, ultrasonic &amp; IR sensors, IMUs, relays, and solderless breadboards for the duration of the hackathon.
+              </p>
+            </div>
+            <span class="text-[11px] font-mono text-cyan-300 bg-cyan-500/10 px-2.5 py-1 rounded-md w-fit">
+              Free Equipment Loan
+            </span>
+          </div>
+
+          <!-- Perk 2: Cloud Credits -->
+          <div class="glass-card rounded-2xl p-6 border border-white/10 flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-violet-500/10 text-violet-400 flex items-center justify-center mb-4">
+                <i data-lucide="cloud" class="w-6 h-6"></i>
+              </div>
+              <h4 class="text-lg font-bold text-white mb-2">Cloud &amp; API Credits</h4>
+              <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                Deploy databases and serverless backends without touching a credit card. Includes free GitHub Student Developer Pack, DigitalOcean credits, and Wolfram|One access.
+              </p>
+            </div>
+            <span class="text-[11px] font-mono text-violet-300 bg-violet-500/10 px-2.5 py-1 rounded-md w-fit">
+              ₹10,000+ Value / Hacker
+            </span>
+          </div>
+
+          <!-- Perk 3: Official Swag Boxes -->
+          <div class="glass-card rounded-2xl p-6 border border-white/10 flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-4">
+                <i data-lucide="package" class="w-6 h-6"></i>
+              </div>
+              <h4 class="text-lg font-bold text-white mb-2">MLH 2027 Swag Boxes</h4>
+              <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                Score limited-edition PBCOEHacks T-shirts, official MLH 2027 season stickers, developer cheatsheets, laptop decals, hacker lanyards, and collectible pins.
+              </p>
+            </div>
+            <span class="text-[11px] font-mono text-emerald-300 bg-emerald-500/10 px-2.5 py-1 rounded-md w-fit">
+              For All Checked-in Hackers
+            </span>
+          </div>
+
+          <!-- Perk 4: 5 Free Meals & Energy Hub -->
+          <div class="glass-card rounded-2xl p-6 border border-white/10 flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-4">
+                <i data-lucide="coffee" class="w-6 h-6"></i>
+              </div>
+              <h4 class="text-lg font-bold text-white mb-2">5 Free Meals &amp; Coffee</h4>
+              <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                Enjoy complimentary breakfast, 2 lunches, midnight snacks, dinner, and unlimited hot tea, coffee, and energy drinks to fuel your late-night coding sprint.
+              </p>
+            </div>
+            <span class="text-[11px] font-mono text-amber-300 bg-amber-500/10 px-2.5 py-1 rounded-md w-fit">
+              100% Free Catering
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 7. EVENT SCHEDULE (RUN OF SHOW - INTERACTIVE TABS)                         -->
+    <!-- ========================================================================= -->
+    <section id="schedule" class="py-20 px-4 sm:px-6 lg:px-8 relative bg-slate-950/40">
+      <div class="max-w-5xl mx-auto">
+        
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="text-xs uppercase font-mono tracking-widest text-cyan-400 font-semibold">Run Of Show</span>
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-2">24 Hours of Relentless Creation</h2>
+          <p class="text-slate-400 mt-4 text-base sm:text-lg">
+            Detailed timeline for both days. Every milestone is organized for maximum productivity, mentorship, and fun.
+          </p>
+
+          <!-- Day 1 / Day 2 Tab Selector -->
+          <div class="mt-8 inline-flex p-1.5 rounded-2xl bg-slate-900 border border-white/10">
+            <button id="tab-day1-btn" class="px-6 py-2.5 rounded-xl font-bold text-sm transition-all bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 shadow-md">
+              Day 1: Saturday, March 20
+            </button>
+            <button id="tab-day2-btn" class="px-6 py-2.5 rounded-xl font-bold text-sm text-slate-400 hover:text-white transition-all">
+              Day 2: Sunday, March 21
+            </button>
+          </div>
+        </div>
+
+        <!-- DAY 1 TIMELINE -->
+        <div id="timeline-day1" class="space-y-4">
+          
+          <div class="glass-card rounded-2xl p-5 border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <span class="font-mono text-cyan-400 font-bold text-sm sm:text-base w-24 shrink-0">08:30 AM</span>
+              <div>
+                <h4 class="font-bold text-white text-base">Check-in, Hardware Loaner Issue &amp; Breakfast</h4>
+                <p class="text-xs text-slate-400">Receive your hacker badge, swag box, and test hardware dev boards.</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-mono bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Check-in</span>
+          </div>
+
+          <div class="glass-card rounded-2xl p-5 border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <span class="font-mono text-cyan-400 font-bold text-sm sm:text-base w-24 shrink-0">10:00 AM</span>
+              <div>
+                <h4 class="font-bold text-white text-base">Opening Ceremony &amp; MLH Address</h4>
+                <p class="text-xs text-slate-400">Welcome note by PBCOE dignitaries, MLH overview, and judging guidelines.</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-mono bg-violet-500/10 text-violet-300 border border-violet-500/20">Ceremony</span>
+          </div>
+
+          <div class="glass-card rounded-2xl p-5 border border-cyan-500/40 bg-cyan-950/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <span class="font-mono text-cyan-300 font-black text-sm sm:text-base w-24 shrink-0">11:00 AM</span>
+              <div>
+                <h4 class="font-bold text-white text-base">🚀 Hacking Officially Begins!</h4>
+                <p class="text-xs text-slate-300">24-hour countdown starts. Repositories initialized and lab work starts.</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-bold">Sprint Starts</span>
+          </div>
+
+          <div class="glass-card rounded-2xl p-5 border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <span class="font-mono text-cyan-400 font-bold text-sm sm:text-base w-24 shrink-0">01:30 PM</span>
+              <div>
+                <h4 class="font-bold text-white text-base">Networking Lunch</h4>
+                <p class="text-xs text-slate-400">Hot nutritious buffet meal served in PBCOE Food Court.</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-mono bg-amber-500/10 text-amber-300 border border-amber-500/20">Food</span>
+          </div>
+
+          <div class="glass-card rounded-2xl p-5 border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <span class="font-mono text-cyan-400 font-bold text-sm sm:text-base w-24 shrink-0">04:30 PM</span>
+              <div>
+                <h4 class="font-bold text-white text-base">Mentorship Round 1: Architecture Review</h4>
+                <p class="text-xs text-slate-400">Industry veterans and faculty mentors validate system architecture and APIs.</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-mono bg-blue-500/10 text-blue-300 border border-blue-500/20">Mentorship</span>
+          </div>
+
+          <div class="glass-card rounded-2xl p-5 border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <span class="font-mono text-cyan-400 font-bold text-sm sm:text-base w-24 shrink-0">08:30 PM</span>
+              <div>
+                <h4 class="font-bold text-white text-base">Dinner &amp; Hacker Game Break</h4>
+                <p class="text-xs text-slate-400">Delectable dinner followed by fun trivia and mini-challenges.</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-mono bg-amber-500/10 text-amber-300 border border-amber-500/20">Food &amp; Fun</span>
+          </div>
+
+          <div class="glass-card rounded-2xl p-5 border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <span class="font-mono text-cyan-400 font-bold text-sm sm:text-base w-24 shrink-0">11:59 PM</span>
+              <div>
+                <h4 class="font-bold text-white text-base">Midnight Snack &amp; Red Bull Energy Drop</h4>
+                <p class="text-xs text-slate-400">Fuel up for the overnight coding sprint with cookies, tea, and drinks.</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-mono bg-violet-500/10 text-violet-300 border border-violet-500/20">Midnight</span>
+          </div>
+
+        </div>
+
+        <!-- DAY 2 TIMELINE -->
+        <div id="timeline-day2" class="space-y-4 hidden">
+          
+          <div class="glass-card rounded-2xl p-5 border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <span class="font-mono text-violet-400 font-bold text-sm sm:text-base w-24 shrink-0">07:30 AM</span>
+              <div>
+                <h4 class="font-bold text-white text-base">Morning Coffee &amp; Breakfast</h4>
+                <p class="text-xs text-slate-400">Hot breakfast, South Indian specialties, fresh fruits, and tea.</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-mono bg-amber-500/10 text-amber-300 border border-amber-500/20">Breakfast</span>
+          </div>
+
+          <div class="glass-card rounded-2xl p-5 border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <span class="font-mono text-violet-400 font-bold text-sm sm:text-base w-24 shrink-0">09:30 AM</span>
+              <div>
+                <h4 class="font-bold text-white text-base">Soft Code Freeze &amp; Devfolio Submission Help</h4>
+                <p class="text-xs text-slate-400">Finalize READMEs, demo video links, and project repositories on Devfolio.</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-mono bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Preparation</span>
+          </div>
+
+          <div class="glass-card rounded-2xl p-5 border border-red-500/40 bg-red-950/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <span class="font-mono text-red-400 font-black text-sm sm:text-base w-24 shrink-0">11:00 AM</span>
+              <div>
+                <h4 class="font-bold text-white text-base">🛑 Hacking Ends &amp; Submission Hard Lock</h4>
+                <p class="text-xs text-slate-300">Hands off keyboards! Hardware loaners must be staged for live judge review.</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-mono bg-red-500/20 text-red-300 border border-red-500/40 font-bold">Submissions Closed</span>
+          </div>
+
+          <div class="glass-card rounded-2xl p-5 border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <span class="font-mono text-violet-400 font-bold text-sm sm:text-base w-24 shrink-0">11:30 AM</span>
+              <div>
+                <h4 class="font-bold text-white text-base">Round 1: Interactive Expo &amp; Science Fair Judging</h4>
+                <p class="text-xs text-slate-400">All teams showcase prototypes at their designated lab booths to judges.</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-mono bg-violet-500/10 text-violet-300 border border-violet-500/20">Expo Judging</span>
+          </div>
+
+          <div class="glass-card rounded-2xl p-5 border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <span class="font-mono text-violet-400 font-bold text-sm sm:text-base w-24 shrink-0">01:30 PM</span>
+              <div>
+                <h4 class="font-bold text-white text-base">Celebration Lunch &amp; Top 10 Announcement</h4>
+                <p class="text-xs text-slate-400">Lunch in the college auditorium foyer while finalist scores are compiled.</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-mono bg-amber-500/10 text-amber-300 border border-amber-500/20">Food</span>
+          </div>
+
+          <div class="glass-card rounded-2xl p-5 border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <span class="font-mono text-violet-400 font-bold text-sm sm:text-base w-24 shrink-0">02:30 PM</span>
+              <div>
+                <h4 class="font-bold text-white text-base">Main Stage Demos: Top 10 Grand Finals</h4>
+                <p class="text-xs text-slate-400">3-minute live pitch + 2-minute Q&amp;A in front of our grand jury.</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-mono bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Main Stage</span>
+          </div>
+
+          <div class="glass-card rounded-2xl p-5 border border-emerald-500/40 bg-emerald-950/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <span class="font-mono text-emerald-400 font-black text-sm sm:text-base w-24 shrink-0">04:00 PM</span>
+              <div>
+                <h4 class="font-bold text-white text-base">🏆 Award Ceremony &amp; Prize Distribution</h4>
+                <p class="text-xs text-slate-300">Trophies, certificates, cash checks, MLH swag packages, and photo ops.</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-bold">Awards</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 8. PRIZES & BOUNTIES                                                      -->
+    <!-- ========================================================================= -->
+    <section id="prizes" class="py-20 px-4 sm:px-6 lg:px-8 relative border-t border-white/5">
+      <div class="max-w-7xl mx-auto">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs uppercase font-mono tracking-widest text-amber-400 font-semibold">Rewards &amp; Recognition</span>
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-2">₹1,00,000+ Prize Pool</h2>
+          <p class="text-slate-400 mt-4 text-base sm:text-lg">
+            Hard work deserves real recognition. Compete for major cash prizes, specialized category bounties, and startup incubation fast-tracks.
+          </p>
+        </div>
+
+        <!-- Top 3 Podiums -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-end mb-12">
+          
+          <!-- 2nd Place -->
+          <div class="glass-card rounded-3xl p-8 border border-white/10 text-center relative order-2 md:order-1">
+            <div class="w-16 h-16 mx-auto rounded-2xl bg-slate-800 text-slate-300 flex items-center justify-center font-black text-2xl mb-4 border border-white/10">
+              🥈
+            </div>
+            <span class="text-xs font-mono text-slate-400 uppercase tracking-widest">First Runner Up</span>
+            <h3 class="text-2xl font-bold text-white mt-1 mb-3">2nd Place</h3>
+            <div class="text-3xl font-extrabold text-slate-200 font-mono mb-4">₹25,000</div>
+            <p class="text-xs text-slate-400 leading-relaxed mb-4">
+              Cash prize + Runner-up trophies + Cloud credits package + Official MLH Runner-up swag.
+            </p>
+            <div class="pt-4 border-t border-white/10 text-xs font-mono text-cyan-400">Silver Crest + Goodie Hamper</div>
+          </div>
+
+          <!-- 1st Place (Champion) -->
+          <div class="glass-card rounded-3xl p-8 border-2 border-cyan-500/60 text-center relative bg-gradient-to-b from-cyan-950/40 via-slate-900/80 to-slate-900 order-1 md:order-2 shadow-2xl shadow-cyan-500/20 transform md:-translate-y-4">
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-amber-400 to-amber-600 text-slate-950 font-extrabold text-xs tracking-wider uppercase shadow-md">
+              Grand Champion
+            </div>
+            <div class="w-20 h-20 mx-auto rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-black text-3xl mb-4 border border-amber-500/40 mt-2">
+              🥇
+            </div>
+            <span class="text-xs font-mono text-amber-400 uppercase tracking-widest font-semibold">Overall Winner</span>
+            <h3 class="text-3xl font-black text-white mt-1 mb-2">1st Place</h3>
+            <div class="text-4xl sm:text-5xl font-black text-gradient-gold font-mono mb-4">₹40,000</div>
+            <p class="text-xs text-slate-300 leading-relaxed mb-6">
+              Grand Champion Trophy + Direct Fast-track to PBCOE Innovation &amp; Incubation Centre + Advanced Hardware Prototyping Kits + MLH Winner Medals.
+            </p>
+            <div class="pt-4 border-t border-white/10 text-xs font-mono text-amber-300 font-semibold">Trophy + Incubation Grant</div>
+          </div>
+
+          <!-- 3rd Place -->
+          <div class="glass-card rounded-3xl p-8 border border-white/10 text-center relative order-3">
+            <div class="w-16 h-16 mx-auto rounded-2xl bg-amber-900/30 text-amber-600 flex items-center justify-center font-black text-2xl mb-4 border border-amber-700/30">
+              🥉
+            </div>
+            <span class="text-xs font-mono text-slate-400 uppercase tracking-widest">Second Runner Up</span>
+            <h3 class="text-2xl font-bold text-white mt-1 mb-3">3rd Place</h3>
+            <div class="text-3xl font-extrabold text-amber-500/90 font-mono mb-4">₹15,000</div>
+            <p class="text-xs text-slate-400 leading-relaxed mb-4">
+              Cash prize + Bronze trophies + Dev tool subscriptions + MLH swag kit.
+            </p>
+            <div class="pt-4 border-t border-white/10 text-xs font-mono text-cyan-400">Bronze Crest + Dev Subscriptions</div>
+          </div>
+
+        </div>
+
+        <!-- Category Bounties Strip -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <div class="glass-card rounded-2xl p-6 border border-white/10">
+            <div class="flex items-center gap-3 mb-3">
+              <i data-lucide="cpu" class="w-5 h-5 text-cyan-400"></i>
+              <h4 class="font-bold text-white text-sm">Best Hardware Hack</h4>
+            </div>
+            <div class="text-xl font-bold font-mono text-cyan-400 mb-2">₹10,000</div>
+            <p class="text-xs text-slate-400">Awarded to the top physical microcontroller / sensor integration built in the lab.</p>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6 border border-white/10">
+            <div class="flex items-center gap-3 mb-3">
+              <i data-lucide="bot" class="w-5 h-5 text-violet-400"></i>
+              <h4 class="font-bold text-white text-sm">Best AI Agent Hack</h4>
+            </div>
+            <div class="text-xl font-bold font-mono text-violet-400 mb-2">₹10,000</div>
+            <p class="text-xs text-slate-400">Awarded for novel multi-agent autonomy, local LLM edge inference, or reasoning pipelines.</p>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6 border border-white/10">
+            <div class="flex items-center gap-3 mb-3">
+              <i data-lucide="sparkles" class="w-5 h-5 text-pink-400"></i>
+              <h4 class="font-bold text-white text-sm">Best All-Women Team</h4>
+            </div>
+            <div class="text-xl font-bold font-mono text-pink-400 mb-2">Cash + Mentorship</div>
+            <p class="text-xs text-slate-400">Dedicated cash prize and 1-on-1 industry leadership mentorship for women in STEM.</p>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6 border border-white/10">
+            <div class="flex items-center gap-3 mb-3">
+              <i data-lucide="badge-check" class="w-5 h-5 text-emerald-400"></i>
+              <h4 class="font-bold text-white text-sm">All Participants</h4>
+            </div>
+            <div class="text-xl font-bold font-mono text-emerald-400 mb-2">Swag &amp; Certificate</div>
+            <p class="text-xs text-slate-400">Official MLH verified digital credential, physical PBCOE certificate, stickers, and meals.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 9. VENUE & CAMPUS FACILITIES                                              -->
+    <!-- ========================================================================= -->
+    <section id="venue" class="py-20 px-4 sm:px-6 lg:px-8 relative bg-slate-950/40">
+      <div class="max-w-7xl mx-auto">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs uppercase font-mono tracking-widest text-cyan-400 font-semibold">Campus Infrastructure</span>
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-2">World-Class Facilities at PBCOE Nagpur</h2>
+          <p class="text-slate-400 mt-4 text-base sm:text-lg">
+            A state-of-the-art engineering environment equipped for 24 hours of sustained coding, hardware fabrication, rest, and dining.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          
+          <!-- Facility Details -->
+          <div class="space-y-6">
+            
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center shrink-0 border border-cyan-500/20">
+                <i data-lucide="wifi" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h4 class="text-lg font-bold text-white">Dual 1 Gbps Leased Fiber Internet</h4>
+                <p class="text-slate-400 text-sm leading-relaxed mt-1">
+                  High-capacity symmetrical fiber connection with full campus Wi-Fi coverage and gigabit Ethernet drops at each team workstation bench.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-violet-500/10 text-violet-400 flex items-center justify-center shrink-0 border border-violet-500/20">
+                <i data-lucide="zap" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h4 class="text-lg font-bold text-white">Uninterrupted 250 kVA Generator Power</h4>
+                <p class="text-slate-400 text-sm leading-relaxed mt-1">
+                  100% DG generator backup coupled with centralized online UPS units guarantees zero power interruptions for your dev rigs and hardware lab tools.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-500/20">
+                <i data-lucide="shield-check" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h4 class="text-lg font-bold text-white">24/7 Monitored Campus &amp; Separate Rest Zones</h4>
+                <p class="text-slate-400 text-sm leading-relaxed mt-1">
+                  Dedicated, secure, and segregated rest areas for male and female hackers with comfortable sleeping mats, round-the-clock campus security, and first aid.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center shrink-0 border border-amber-500/20">
+                <i data-lucide="map-pin" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h4 class="text-lg font-bold text-white">Strategic Location in Nagpur</h4>
+                <p class="text-slate-400 text-sm leading-relaxed mt-1">
+                  Located on Umred Road, just 5 km from Nagpur Railway Station and easily accessible via Nagpur Metro and city transport hubs.
+                </p>
+              </div>
+            </div>
+
+            <!-- Address Card -->
+            <div class="glass-card rounded-2xl p-5 border border-white/10 mt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div>
+                <span class="text-xs uppercase font-mono text-cyan-400 font-semibold">Campus Address</span>
+                <p class="text-sm font-medium text-white mt-1">
+                  Priyadarshini Bhagwati College of Engineering<br>
+                  <span class="text-slate-400">Harpur Nagar, Umred Road, Nagpur, Maharashtra - 440024</span>
+                </p>
+              </div>
+              <a href="https://maps.google.com/?q=Priyadarshini+Bhagwati+College+of+Engineering+Nagpur" target="_blank" rel="noopener noreferrer"
+                 class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-cyan-300 text-xs font-semibold border border-white/10 transition-colors shrink-0">
+                <i data-lucide="navigation" class="w-4 h-4"></i>
+                <span>Get Directions</span>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Google Maps Embed -->
+          <div class="glass-card rounded-3xl p-3 border border-white/10 overflow-hidden shadow-2xl h-[420px] relative">
+            <iframe 
+              title="PBCOE Nagpur Location Map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.758223946255!2d79.13024847605923!3d21.122204980550478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4b8705f134ee7%3A0x86c66cf1799797df!2sPriyadarshini%20Bhagwati%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+              class="w-full h-full rounded-2xl border-0 filter contrast-125"
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 10. COMPREHENSIVE FAQ SECTION (ACCORDION)                                 -->
+    <!-- ========================================================================= -->
+    <section id="faq" class="py-20 px-4 sm:px-6 lg:px-8 relative border-t border-white/5">
+      <div class="max-w-4xl mx-auto">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs uppercase font-mono tracking-widest text-cyan-400 font-semibold">Got Questions?</span>
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-2">Frequently Asked Questions</h2>
+          <p class="text-slate-400 mt-4 text-base sm:text-lg">
+            Everything you need to know about eligibility, equipment, zero fees, and our code of conduct.
+          </p>
+        </div>
+
+        <div class="space-y-4" id="faq-accordion">
+          
+          <!-- FAQ 1: Free Cost -->
+          <div class="faq-item glass-card rounded-2xl border border-white/10 overflow-hidden">
+            <button class="faq-btn w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-white text-base sm:text-lg focus:outline-none">
+              <span>Is PBCOEHacks 2027 really 100% free to attend?</span>
+              <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-cyan-400 transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-white/5 pt-4">
+              <strong class="text-emerald-400 font-semibold">Yes, absolutely 100% free!</strong> There are zero registration fees, zero participation charges, and zero hidden costs. Thanks to our partners, all accepted participants receive complimentary admission, access to the MLH Hardware Lab, 5 meals, snacks, high-speed Wi-Fi, swag boxes, and overnight accommodation at PBCOE.
+            </div>
+          </div>
+
+          <!-- FAQ 2: Who can participate -->
+          <div class="faq-item glass-card rounded-2xl border border-white/10 overflow-hidden">
+            <button class="faq-btn w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-white text-base sm:text-lg focus:outline-none">
+              <span>Who is eligible to participate? Can external students apply?</span>
+              <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-cyan-400 transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-white/5 pt-4">
+              Any currently enrolled student — whether pursuing an undergraduate, postgraduate, or diploma degree in engineering, technology, science, or design from <strong class="text-white font-semibold">any university or college across India</strong> — is welcome to apply! External university students are actively encouraged.
+            </div>
+          </div>
+
+          <!-- FAQ 3: MLH Code of Conduct (MANDATORY REQUIREMENT) -->
+          <div class="faq-item glass-card rounded-2xl border border-cyan-500/30 overflow-hidden bg-cyan-950/10">
+            <button class="faq-btn w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-white text-base sm:text-lg focus:outline-none">
+              <span class="text-cyan-300 flex items-center gap-2">
+                <i data-lucide="shield-alert" class="w-5 h-5 text-cyan-400 shrink-0"></i>
+                <span>What is the MLH Code of Conduct?</span>
+              </span>
+              <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-cyan-400 transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>
+                <strong class="text-white">PBCOEHacks is an official MLH Member Event partner.</strong> All attendees, mentors, judges, volunteers, and sponsors must abide by the official Major League Hacking Code of Conduct.
+              </p>
+              <p>
+                We believe in providing a safe, harassment-free, welcoming, and inclusive experience for everyone, regardless of gender, gender identity, age, sexual orientation, disability, physical appearance, race, ethnicity, or religion.
+              </p>
+              <div class="pt-2">
+                <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-semibold underline underline-offset-4">
+                  <span>Read the complete official MLH Code of Conduct (PDF)</span>
+                  <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 4: Hardware Projects -->
+          <div class="faq-item glass-card rounded-2xl border border-white/10 overflow-hidden">
+            <button class="faq-btn w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-white text-base sm:text-lg focus:outline-none">
+              <span>Can we build hardware or IoT projects? What tools are available?</span>
+              <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-cyan-400 transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-white/5 pt-4">
+              Yes! In fact, hardware is one of our flagship focus tracks. We provide access to the MLH Hardware Lab containing microcontrollers (ESP32, Arduino, Raspberry Pi), environmental sensors, IMUs, cameras, and soldering stations. You are also welcome to bring your own specialized sensors or development boards.
+            </div>
+          </div>
+
+          <!-- FAQ 5: Team Size -->
+          <div class="faq-item glass-card rounded-2xl border border-white/10 overflow-hidden">
+            <button class="faq-btn w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-white text-base sm:text-lg focus:outline-none">
+              <span>How do teams work? Can I register solo?</span>
+              <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-cyan-400 transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-white/5 pt-4">
+              Teams can consist of <strong class="text-white">2 to 4 members</strong>. You can register with a pre-formed team on Devfolio, or apply as an individual and join our pre-event Discord mixer where you can connect with other accepted hackers and form a team.
+            </div>
+          </div>
+
+          <!-- FAQ 6: What to bring -->
+          <div class="faq-item glass-card rounded-2xl border border-white/10 overflow-hidden">
+            <button class="faq-btn w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-white text-base sm:text-lg focus:outline-none">
+              <span>What should I bring to the hackathon?</span>
+              <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-cyan-400 transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-white/5 pt-4">
+              Bring your valid College/University Student ID card, government-issued photo ID, laptop, chargers, extension cords, toiletries, comfortable clothes, jacket/blanket for overnight rest zones, and any specialized hardware components you want to experiment with.
+            </div>
+          </div>
+
+          <!-- FAQ 7: Travel Reimbursements -->
+          <div class="faq-item glass-card rounded-2xl border border-white/10 overflow-hidden">
+            <button class="faq-btn w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-white text-base sm:text-lg focus:outline-none">
+              <span>Are travel reimbursements or travel perks available?</span>
+              <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-cyan-400 transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-white/5 pt-4">
+              Need-based partial travel stipends are available for top-tier outstation teams traveling from outside Maharashtra. Mark your travel stipend request directly in your Devfolio application for review by the committee.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 11. SPONSORS & PARTNERS                                                   -->
+    <!-- ========================================================================= -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 border-t border-white/5 bg-slate-950/20">
+      <div class="max-w-7xl mx-auto text-center">
+        <span class="text-xs uppercase font-mono tracking-widest text-slate-400 font-medium">Supported By Leading Technology Ecosystem Partners</span>
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-8 sm:gap-12 opacity-80">
+          <div class="flex items-center gap-2 text-slate-300 font-bold text-lg">
+            <svg class="w-6 h-6 fill-current text-cyan-400" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm1 14.5v-9l6 4.5-6 4.5zM11 7.5v9l-6-4.5 6-4.5z"/></svg>
+            <span>Devfolio</span>
+          </div>
+          <div class="flex items-center gap-2 text-slate-300 font-bold text-lg">
+            <span class="text-red-500 font-mono text-xl font-black">&lt;MLH/&gt;</span>
+            <span>Major League Hacking</span>
+          </div>
+          <div class="flex items-center gap-2 text-slate-300 font-bold text-lg">
+            <svg class="w-6 h-6 fill-current text-white" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            <span>GitHub Education</span>
+          </div>
+          <div class="flex items-center gap-2 text-slate-300 font-bold text-lg">
+            <span class="text-blue-400 font-black text-xl font-mono">DO</span>
+            <span>DigitalOcean</span>
+          </div>
+          <div class="flex items-center gap-2 text-slate-300 font-bold text-lg">
+            <span class="text-amber-400 font-black text-xl font-mono">W|1</span>
+            <span>Wolfram</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- 12. FOOTER (WITH MANDATORY MLH STATEMENT & CODE OF CONDUCT)               -->
+  <!-- ========================================================================= -->
+  <footer class="border-t border-white/10 bg-[#06080F] text-slate-400 py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Top Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+        
+        <!-- Col 1: Brand & College Info -->
+        <div class="md:col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <img src="https://pbcoe.edu.in/img_pbcoe/logo.jpg" alt="PBCOE Logo" class="h-10 w-auto rounded-lg"
+                 onerror="this.src='https://pbcoe.edu.in/images/logo.png'">
+            <div>
+              <span class="text-xl font-black text-white tracking-tight">PBCOEHacks 2027</span>
+              <p class="text-xs text-slate-400">Priyadarshini Bhagwati College of Engineering, Nagpur</p>
+            </div>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed max-w-md">
+            Central India's premier student innovation sprint. Organized by the Student Technology Chapter at PBCOE Nagpur in official partnership with Major League Hacking (MLH).
+          </p>
+          <div class="flex items-center gap-3 pt-2">
+            <a href="https://devfolio.co" target="_blank" rel="noopener noreferrer" 
+               class="px-3 py-1.5 rounded-lg bg-slate-900 border border-white/10 text-xs text-cyan-400 hover:text-white transition-colors">
+              Devfolio Apply
+            </a>
+            <a href="https://discord.gg/mlh" target="_blank" rel="noopener noreferrer" 
+               class="px-3 py-1.5 rounded-lg bg-slate-900 border border-white/10 text-xs text-violet-400 hover:text-white transition-colors">
+              Discord
+            </a>
+            <a href="mailto:team@pbcoehacks.tech" 
+               class="px-3 py-1.5 rounded-lg bg-slate-900 border border-white/10 text-xs text-slate-300 hover:text-white transition-colors flex items-center gap-1.5">
+              <i data-lucide="mail" class="w-3.5 h-3.5"></i>
+              <span>team@pbcoehacks.tech</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation Links -->
+        <div>
+          <h4 class="text-sm font-semibold uppercase tracking-wider text-white mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#about" class="hover:text-cyan-400 transition-colors">About PBCOEHacks</a></li>
+            <li><a href="#tracks" class="hover:text-cyan-400 transition-colors">Hackathon Tracks</a></li>
+            <li><a href="#perks" class="hover:text-cyan-400 transition-colors">Hardware Lab &amp; Perks</a></li>
+            <li><a href="#schedule" class="hover:text-cyan-400 transition-colors">Run of Show</a></li>
+            <li><a href="#prizes" class="hover:text-cyan-400 transition-colors">Prize Pool &amp; Bounties</a></li>
+            <li><a href="#venue" class="hover:text-cyan-400 transition-colors">Venue &amp; Travel</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: MLH & Institutional Compliance -->
+        <div>
+          <h4 class="text-sm font-semibold uppercase tracking-wider text-white mb-4">MLH &amp; Conduct</h4>
+          <ul class="space-y-2 text-xs">
+            <li>
+              <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank" rel="noopener noreferrer" 
+                 class="text-cyan-400 hover:underline flex items-center gap-1 font-semibold">
+                <span>MLH Code of Conduct</span>
+                <i data-lucide="external-link" class="w-3 h-3"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://mlh.io" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">
+                Major League Hacking Season 2027
+              </a>
+            </li>
+            <li>
+              <a href="https://pbcoe.edu.in" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">
+                PBCOE Official Portal
+              </a>
+            </li>
+            <li>
+              <a href="mailto:team@pbcoehacks.tech" class="hover:text-white transition-colors">
+                Contact: team@pbcoehacks.tech
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- MANDATORY MLH DISCLAIMER BANNER -->
+      <div class="p-4 rounded-xl bg-slate-900/90 border border-cyan-500/30 text-xs text-slate-300 leading-relaxed mb-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 shrink-0"></span>
+          <p>
+            <strong class="text-white">MLH Member Event Disclaimer:</strong> PBCOEHacks is an official MLH Member Event partner. All attendees, mentors, and sponsors must abide by the 
+            <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank" rel="noopener noreferrer" class="text-cyan-400 underline underline-offset-2 font-semibold">MLH Code of Conduct (https://static.mlh.io/docs/mlh-code-of-conduct.pdf)</a>.
+          </p>
+        </div>
+        <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank" rel="noopener noreferrer"
+           class="shrink-0 px-3 py-1 rounded bg-cyan-500/20 text-cyan-300 hover:bg-cyan-500/30 font-mono text-[11px] font-semibold transition-colors">
+          View Code of Conduct
+        </a>
+      </div>
+
+      <!-- Bottom Line -->
+      <div class="pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <p>&copy; 2027 PBCOEHacks. Organized by Priyadarshini Bhagwati College of Engineering, Nagpur. All rights reserved.</p>
+        <p class="font-mono text-slate-400">Designed with modern standards for GitHub Pages &bull; 100% Free for Students</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================================= -->
+  <!-- 13. JAVASCRIPT: LOGIC, ANIMATIONS, COUNTDOWN & INTERACTION               -->
+  <!-- ========================================================================= -->
+  <script>
+    // Initialize Lucide Icons
+    if (window.lucide) {
+      lucide.createIcons();
+    }
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+    }
+
+    // Schedule Tabs
+    const tabDay1Btn = document.getElementById('tab-day1-btn');
+    const tabDay2Btn = document.getElementById('tab-day2-btn');
+    const timelineDay1 = document.getElementById('timeline-day1');
+    const timelineDay2 = document.getElementById('timeline-day2');
+
+    if (tabDay1Btn && tabDay2Btn && timelineDay1 && timelineDay2) {
+      tabDay1Btn.addEventListener('click', () => {
+        timelineDay1.classList.remove('hidden');
+        timelineDay2.classList.add('hidden');
+        tabDay1Btn.className = "px-6 py-2.5 rounded-xl font-bold text-sm transition-all bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 shadow-md";
+        tabDay2Btn.className = "px-6 py-2.5 rounded-xl font-bold text-sm text-slate-400 hover:text-white transition-all";
+      });
+
+      tabDay2Btn.addEventListener('click', () => {
+        timelineDay2.classList.remove('hidden');
+        timelineDay1.classList.add('hidden');
+        tabDay2Btn.className = "px-6 py-2.5 rounded-xl font-bold text-sm transition-all bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 shadow-md";
+        tabDay1Btn.className = "px-6 py-2.5 rounded-xl font-bold text-sm text-slate-400 hover:text-white transition-all";
+      });
+    }
+
+    // FAQ Accordion
+    const faqButtons = document.querySelectorAll('.faq-btn');
+    faqButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector('.faq-icon');
+        const isOpen = !content.classList.contains('hidden');
+
+        // Close all
+        document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+        document.querySelectorAll('.faq-icon').forEach(i => i.style.transform = 'rotate(0deg)');
+
+        if (!isOpen) {
+          content.classList.remove('hidden');
+          if (icon) icon.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+
+    // Countdown Timer (Target: March 20, 2027 09:00:00 IST)
+    const targetDate = new Date('2027-03-20T09:00:00+05:30').getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference <= 0) {
+        document.getElementById('days').innerText = "00";
+        document.getElementById('hours').innerText = "00";
+        document.getElementById('minutes').innerText = "00";
+        document.getElementById('seconds').innerText = "00";
+        return;
+      }
+
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+      const daysEl = document.getElementById('days');
+      const hoursEl = document.getElementById('hours');
+      const minutesEl = document.getElementById('minutes');
+      const secondsEl = document.getElementById('seconds');
+
+      if (daysEl) daysEl.innerText = String(days).padStart(2, '0');
+      if (hoursEl) hoursEl.innerText = String(hours).padStart(2, '0');
+      if (minutesEl) minutesEl.innerText = String(minutes).padStart(2, '0');
+      if (secondsEl) secondsEl.innerText = String(seconds).padStart(2, '0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // Interactive Starfield & Particle Canvas
+    const canvas = document.getElementById('hero-canvas');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      let particles = [];
+      
+      function resizeCanvas() {
+        canvas.width = canvas.parentElement.offsetWidth;
+        canvas.height = canvas.parentElement.offsetHeight;
+      }
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
+
+      for (let i = 0; i < 60; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          radius: Math.random() * 1.5 + 0.5,
+          vx: (Math.random() - 0.5) * 0.4,
+          vy: (Math.random() - 0.5) * 0.4,
+          alpha: Math.random() * 0.6 + 0.2
+        });
+      }
+
+      function drawParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(6, 182, 212, ${p.alpha})`;
+          ctx.fill();
+
+          p.x += p.vx;
+          p.y += p.vy;
+
+          if (p.x < 0) p.x = canvas.width;
+          if (p.x > canvas.width) p.x = 0;
+          if (p.y < 0) p.y = canvas.height;
+          if (p.y > canvas.height) p.y = 0;
+        });
+        requestAnimationFrame(drawParticles);
+      }
+      drawParticles();
+    }
+  </script>
+</body>
+</html>
